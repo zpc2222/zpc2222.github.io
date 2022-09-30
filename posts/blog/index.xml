@@ -43,5 +43,14 @@
       <description>用hugo写的第一篇Markdown格式的博客</description>
     </item>
     
+    <item>
+      <title>视听</title>
+      <link>https://zpc2222.github.io/posts/blog/blog-music/</link>
+      <pubDate>Tue, 27 Sep 2022 20:01:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/blog/blog-music/</guid>
+      <description>听听音乐吧</description>
+    </item>
+    
   </channel>
 </rss>
