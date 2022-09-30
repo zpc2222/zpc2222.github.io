@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 29 Sep 2022 09:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 12:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客</title>
+      <link>https://zpc2222.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 30 Sep 2022 12:01:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>blog</title>
       <link>https://zpc2222.github.io/tags/blog/</link>
@@ -26,11 +35,29 @@
     </item>
     
     <item>
-      <title>tech</title>
-      <link>https://zpc2222.github.io/tags/tech/</link>
+      <title>spring</title>
+      <link>https://zpc2222.github.io/tags/spring/</link>
       <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/tags/tech/</guid>
+      <guid>https://zpc2222.github.io/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>支付</title>
+      <link>https://zpc2222.github.io/tags/%E6%94%AF%E4%BB%98/</link>
+      <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E6%94%AF%E4%BB%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数字人民币</title>
+      <link>https://zpc2222.github.io/tags/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81/</link>
+      <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81/</guid>
       <description></description>
     </item>
     
@@ -44,11 +71,20 @@
     </item>
     
     <item>
-      <title>博客</title>
-      <link>https://zpc2222.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 27 Sep 2022 20:01:00 +0800</pubDate>
+      <title>小程序</title>
+      <link>https://zpc2222.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/tags/%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://zpc2222.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>微信支付</title>
+      <link>https://zpc2222.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</link>
+      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</guid>
       <description></description>
     </item>
     
@@ -71,11 +107,119 @@
     </item>
     
     <item>
+      <title>bat</title>
+      <link>https://zpc2222.github.io/tags/bat/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/bat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cron</title>
+      <link>https://zpc2222.github.io/tags/cron/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/cron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IO</title>
+      <link>https://zpc2222.github.io/tags/io/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://zpc2222.github.io/tags/jvm/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://zpc2222.github.io/tags/maven/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>netty</title>
       <link>https://zpc2222.github.io/tags/netty/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/tags/netty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://zpc2222.github.io/tags/nginx/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rocketMQ</title>
+      <link>https://zpc2222.github.io/tags/rocketmq/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/rocketmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://zpc2222.github.io/tags/shell/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具类</title>
+      <link>https://zpc2222.github.io/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网络编程</title>
+      <link>https://zpc2222.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>脚本</title>
+      <link>https://zpc2222.github.io/tags/%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E8%84%9A%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>运维</title>
+      <link>https://zpc2222.github.io/tags/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/tags/%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
     

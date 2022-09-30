@@ -6,7 +6,16 @@
     <description>Recent content on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 29 Sep 2022 09:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 12:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>github部署静态博客</title>
+      <link>https://zpc2222.github.io/posts/blog/blog-github/</link>
+      <pubDate>Fri, 30 Sep 2022 12:01:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/blog/blog-github/</guid>
+      <description>使用hugo部署静态博客，并自动发布</description>
+    </item>
+    
     <item>
       <title>Markdown 语法支持</title>
       <link>https://zpc2222.github.io/posts/blog/markdown-syntax/</link>
@@ -18,10 +27,10 @@
     
     <item>
       <title>部署hugo问题</title>
-      <link>https://zpc2222.github.io/posts/blog/blog-eq1/</link>
+      <link>https://zpc2222.github.io/posts/blog/blog-question/</link>
       <pubDate>Wed, 28 Sep 2022 14:01:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/blog/blog-eq1/</guid>
+      <guid>https://zpc2222.github.io/posts/blog/blog-question/</guid>
       <description>用hugo发布静态博客遇到的一些问题</description>
     </item>
     
@@ -72,10 +81,10 @@
     
     <item>
       <title>第一篇博客</title>
-      <link>https://zpc2222.github.io/posts/blog/blog/</link>
+      <link>https://zpc2222.github.io/posts/blog/blog-first/</link>
       <pubDate>Tue, 27 Sep 2022 20:01:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/blog/blog/</guid>
+      <guid>https://zpc2222.github.io/posts/blog/blog-first/</guid>
       <description>用hugo写的第一篇Markdown格式的博客</description>
     </item>
     
@@ -89,21 +98,21 @@
     </item>
     
     <item>
+      <title>springboot接入微信支付</title>
+      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</link>
+      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</guid>
+      <description>小程序使用微信支付（需要商家申请号商户号才能开发）</description>
+    </item>
+    
+    <item>
       <title>微信小程序相关</title>
       <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</guid>
       <description>微信小程序相关</description>
-    </item>
-    
-    <item>
-      <title>微信支付</title>
-      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</link>
-      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</guid>
-      <description>小程序使用微信支付开发demo</description>
     </item>
     
     <item>
@@ -220,7 +229,7 @@
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/posts/tech/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8Bio/</guid>
-      <description>## io简介</description>
+      <description>网络编程IO简介</description>
     </item>
     
     <item>
