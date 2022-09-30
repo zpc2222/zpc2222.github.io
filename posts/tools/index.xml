@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>🛠️ 工具 on 我的个人小站</title>
+    <link>https://zpc2222.github.io/posts/tools/</link>
+    <description>Recent content in 🛠️ 工具 on 我的个人小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Sep 2022 00:14:01 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git常用</title>
+      <link>https://zpc2222.github.io/posts/tools/git%E5%B8%B8%E7%94%A8/</link>
+      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/git%E5%B8%B8%E7%94%A8/</guid>
+      <description>Git常用的一些语句，语法及问题</description>
+    </item>
+    
+    <item>
+      <title>IDEA</title>
+      <link>https://zpc2222.github.io/posts/tools/idea/</link>
+      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/idea/</guid>
+      <description>Java开发神器的使用</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://zpc2222.github.io/posts/tools/linux/</link>
+      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/linux/</guid>
+      <description>Linux语句，语法及问题</description>
+    </item>
+    
+    <item>
+      <title>obsidian</title>
+      <link>https://zpc2222.github.io/posts/tools/obsidian/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/obsidian/</guid>
+      <description>obsidian</description>
+    </item>
+    
+  </channel>
+</rss>

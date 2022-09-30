@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>👨🏻‍💻 技术 on 我的个人小站</title>
+    <link>https://zpc2222.github.io/posts/tech/</link>
+    <description>Recent content in 👨🏻‍💻 技术 on 我的个人小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Sep 2022 00:17:58 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数字人民币支付</title>
+      <link>https://zpc2222.github.io/posts/tech/java/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81%E6%94%AF%E4%BB%98/</link>
+      <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81%E6%94%AF%E4%BB%98/</guid>
+      <description>数据人民币支付-对接苏州建行</description>
+    </item>
+    
+    <item>
+      <title>登录框架</title>
+      <link>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</guid>
+      <description>spring security框架 拦截器用法</description>
+    </item>
+    
+    <item>
+      <title>微信小程序相关</title>
+      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</guid>
+      <description>微信小程序相关</description>
+    </item>
+    
+    <item>
+      <title>微信支付</title>
+      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</link>
+      <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</guid>
+      <description>小程序使用微信支付开发demo</description>
+    </item>
+    
+    <item>
+      <title>cron表达式</title>
+      <link>https://zpc2222.github.io/posts/tech/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>cron表达式</description>
+    </item>
+    
+    <item>
+      <title>Java常用工具类</title>
+      <link>https://zpc2222.github.io/posts/tech/java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</guid>
+      <description>一些常用的工具类，自用</description>
+    </item>
+    
+    <item>
+      <title>JVM分析</title>
+      <link>https://zpc2222.github.io/posts/tech/jvm%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/jvm%E5%88%86%E6%9E%90/</guid>
+      <description>JVM分析方法</description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://zpc2222.github.io/posts/tech/maven/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/maven/</guid>
+      <description>maven使用命令</description>
+    </item>
+    
+    <item>
+      <title>Netty实战</title>
+      <link>https://zpc2222.github.io/posts/tech/netty%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/netty%E5%AE%9E%E6%88%98/</guid>
+      <description>Java代码编写的一个客户端&#43;服务端的demo实例</description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://zpc2222.github.io/posts/tech/nginx/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/nginx/</guid>
+      <description>Nginx的一些使用及配置</description>
+    </item>
+    
+    <item>
+      <title>rocketMQ</title>
+      <link>https://zpc2222.github.io/posts/tech/rocketmq/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/rocketmq/</guid>
+      <description>rocketMQ的命令使用</description>
+    </item>
+    
+    <item>
+      <title>Shell脚本</title>
+      <link>https://zpc2222.github.io/posts/tech/shell%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/shell%E8%84%9A%E6%9C%AC/</guid>
+      <description>linux环境运行的脚本</description>
+    </item>
+    
+    <item>
+      <title>Sindows</title>
+      <link>https://zpc2222.github.io/posts/tech/windows/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/windows/</guid>
+      <description>windows命令</description>
+    </item>
+    
+    <item>
+      <title>网络编程IO</title>
+      <link>https://zpc2222.github.io/posts/tech/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8Bio/</link>
+      <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8Bio/</guid>
+      <description>## io简介</description>
+    </item>
+    
+  </channel>
+</rss>

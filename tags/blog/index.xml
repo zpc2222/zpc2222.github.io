@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>blog on 我的个人小站</title>
+    <link>https://zpc2222.github.io/tags/blog/</link>
+    <description>Recent content in blog on 我的个人小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 29 Sep 2022 09:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown 语法支持</title>
+      <link>https://zpc2222.github.io/posts/blog/markdown-syntax/</link>
+      <pubDate>Thu, 29 Sep 2022 09:01:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/blog/markdown-syntax/</guid>
+      <description>描述下hugo支持的各种 markdown 语法及效果展示。</description>
+    </item>
+    
+    <item>
+      <title>部署hugo问题</title>
+      <link>https://zpc2222.github.io/posts/blog/blog-eq1/</link>
+      <pubDate>Wed, 28 Sep 2022 14:01:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/blog/blog-eq1/</guid>
+      <description>用hugo发布静态博客遇到的一些问题</description>
+    </item>
+    
+  </channel>
+</rss>
