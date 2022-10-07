@@ -6,7 +6,34 @@
     <description>Recent content in 🛠️ 工具 on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Sep 2022 00:14:01 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Oct 2022 00:14:01 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome</title>
+      <link>https://zpc2222.github.io/posts/tools/chrome/</link>
+      <pubDate>Sat, 01 Oct 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/chrome/</guid>
+      <description>Chrome扩展工具</description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://zpc2222.github.io/posts/tools/github/</link>
+      <pubDate>Sat, 01 Oct 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/github/</guid>
+      <description>GitHub</description>
+    </item>
+    
+    <item>
+      <title>正则表达式</title>
+      <link>https://zpc2222.github.io/posts/tools/regex/</link>
+      <pubDate>Sat, 01 Oct 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/regex/</guid>
+      <description>正则表达式</description>
+    </item>
+    
     <item>
       <title>Git常用</title>
       <link>https://zpc2222.github.io/posts/tools/git%E5%B8%B8%E7%94%A8/</link>
@@ -17,21 +44,21 @@
     </item>
     
     <item>
-      <title>IDEA</title>
-      <link>https://zpc2222.github.io/posts/tools/idea/</link>
-      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/posts/tools/idea/</guid>
-      <description>Java开发神器的使用</description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://zpc2222.github.io/posts/tools/linux/</link>
       <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/posts/tools/linux/</guid>
       <description>Linux语句，语法及问题</description>
+    </item>
+    
+    <item>
+      <title>必备应用</title>
+      <link>https://zpc2222.github.io/posts/tools/applist/</link>
+      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tools/applist/</guid>
+      <description>工具的列举</description>
     </item>
     
     <item>
