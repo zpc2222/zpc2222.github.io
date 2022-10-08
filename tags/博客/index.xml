@@ -16,14 +16,5 @@
       <description>使用hugo部署静态博客，并自动发布</description>
     </item>
     
-    <item>
-      <title>第一篇博客</title>
-      <link>https://zpc2222.github.io/posts/blog/blog-first/</link>
-      <pubDate>Tue, 27 Sep 2022 20:01:00 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/posts/blog/blog-first/</guid>
-      <description>用hugo写的第一篇Markdown格式的博客</description>
-    </item>
-    
   </channel>
 </rss>

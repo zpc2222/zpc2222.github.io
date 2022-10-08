@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 29 Sep 2022 09:01:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown 语法支持</title>
-      <link>https://zpc2222.github.io/posts/blog/markdown-syntax/</link>
+      <link>https://zpc2222.github.io/posts/blog/markdown-use/</link>
       <pubDate>Thu, 29 Sep 2022 09:01:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/blog/markdown-syntax/</guid>
+      <guid>https://zpc2222.github.io/posts/blog/markdown-use/</guid>
       <description>描述下hugo支持的各种 markdown 语法及效果展示。</description>
     </item>
     

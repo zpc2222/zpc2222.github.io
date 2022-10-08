@@ -81,10 +81,10 @@
     
     <item>
       <title>Markdown 语法支持</title>
-      <link>https://zpc2222.github.io/posts/blog/markdown-syntax/</link>
+      <link>https://zpc2222.github.io/posts/blog/markdown-use/</link>
       <pubDate>Thu, 29 Sep 2022 09:01:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/blog/markdown-syntax/</guid>
+      <guid>https://zpc2222.github.io/posts/blog/markdown-use/</guid>
       <description>描述下hugo支持的各种 markdown 语法及效果展示。</description>
     </item>
     
@@ -131,15 +131,6 @@
       
       <guid>https://zpc2222.github.io/posts/tools/applist/</guid>
       <description>工具的列举</description>
-    </item>
-    
-    <item>
-      <title>第一篇博客</title>
-      <link>https://zpc2222.github.io/posts/blog/blog-first/</link>
-      <pubDate>Tue, 27 Sep 2022 20:01:00 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/posts/blog/blog-first/</guid>
-      <description>用hugo写的第一篇Markdown格式的博客</description>
     </item>
     
     <item>
