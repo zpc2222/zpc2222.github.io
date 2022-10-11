@@ -107,11 +107,11 @@
     </item>
     
     <item>
-      <title>Git常用</title>
-      <link>https://zpc2222.github.io/posts/tools/git%E5%B8%B8%E7%94%A8/</link>
+      <title>Git</title>
+      <link>https://zpc2222.github.io/posts/tools/git/</link>
       <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tools/git%E5%B8%B8%E7%94%A8/</guid>
+      <guid>https://zpc2222.github.io/posts/tools/git/</guid>
       <description>Git常用的一些语句，语法及问题</description>
     </item>
     
@@ -287,6 +287,15 @@
     </item>
     
     
+    
+    <item>
+      <title>🛠️ 工作</title>
+      <link>https://zpc2222.github.io/posts/work/_index-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/work/_index-1/</guid>
+      <description>工作信息</description>
+    </item>
     
   </channel>
 </rss>
