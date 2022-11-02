@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Sep 2022 00:17:58 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 00:13:13 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>springboot接入微信支付</title>
+      <link>https://zpc2222.github.io/posts/tech/java/java%E5%B8%B8%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <pubDate>Wed, 02 Nov 2022 00:13:13 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/java/java%E5%B8%B8%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <description>Java常用的一些小技巧</description>
+    </item>
+    
     <item>
       <title>登录框架</title>
       <link>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</link>
