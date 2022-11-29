@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 02 Nov 2022 00:13:13 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Es入门-easy-es</title>
+      <link>https://zpc2222.github.io/posts/tech/es%E5%85%A5%E9%97%A8-easy-es/</link>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/es%E5%85%A5%E9%97%A8-easy-es/</guid>
+      <description>ElasticSearch入门使用</description>
+    </item>
+    
     <item>
       <title>springboot接入微信支付</title>
       <link>https://zpc2222.github.io/posts/tech/java/java%E5%B8%B8%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
@@ -85,7 +94,7 @@
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/posts/tech/netty%E5%AE%9E%E6%88%98/</guid>
-      <description>Java代码编写的一个客户端&#43;服务端的demo实例</description>
+      <description>Java代码编写的一个客户端&#43;服务端的demo实例，入门级</description>
     </item>
     
     <item>
