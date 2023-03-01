@@ -17,6 +17,9 @@
     <loc>https://zpc2222.github.io/posts/</loc>
     <lastmod>2022-12-09T15:09:00+08:00</lastmod>
   </url><url>
+    <loc>https://zpc2222.github.io/posts/life/2023/</loc>
+    <lastmod>2022-12-09T15:09:00+08:00</lastmod>
+  </url><url>
     <loc>https://zpc2222.github.io/categories/</loc>
     <lastmod>2022-12-09T15:09:00+08:00</lastmod>
   </url><url>
@@ -33,9 +36,6 @@
     <lastmod>2022-12-09T15:09:00+08:00</lastmod>
   </url><url>
     <loc>https://zpc2222.github.io/</loc>
-    <lastmod>2022-12-09T15:09:00+08:00</lastmod>
-  </url><url>
-    <loc>https://zpc2222.github.io/posts/life/year/</loc>
     <lastmod>2022-12-09T15:09:00+08:00</lastmod>
   </url><url>
     <loc>https://zpc2222.github.io/tags/elasticsearch/</loc>
@@ -86,14 +86,14 @@
     <loc>https://zpc2222.github.io/posts/life/shopping/</loc>
     <lastmod>2022-10-05T00:09:15+08:00</lastmod>
   </url><url>
-    <loc>https://zpc2222.github.io/posts/blog/blog-github/</loc>
-    <lastmod>2022-10-01T13:01:00+08:00</lastmod>
-  </url><url>
     <loc>https://zpc2222.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-10-01T13:01:00+08:00</lastmod>
   </url><url>
     <loc>https://zpc2222.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-10-02T20:01:00+08:00</lastmod>
+  </url><url>
+    <loc>https://zpc2222.github.io/posts/blog/blog-github/</loc>
+    <lastmod>2022-10-01T13:01:00+08:00</lastmod>
   </url><url>
     <loc>https://zpc2222.github.io/tags/blog/</loc>
     <lastmod>2022-09-29T09:01:00+08:00</lastmod>
@@ -214,10 +214,6 @@
   </url><url>
     <loc>https://zpc2222.github.io/links/</loc>
     <lastmod>2022-09-01T10:10:50+08:00</lastmod>
-  </url><url>
-    <loc>https://zpc2222.github.io/posts/_index_of_posts/</loc>
-  </url><url>
-    <loc>https://zpc2222.github.io/posts/life/_index_of_life/</loc>
   </url><url>
     <loc>https://zpc2222.github.io/archives/</loc>
   </url><url>
