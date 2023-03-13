@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MybatisPlus常用</title>
+      <link>https://zpc2222.github.io/posts/tech/mybatisplus/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/mybatisplus/</guid>
+      <description>MybatisPlus常用一些语法及心得</description>
+    </item>
+    
     <item>
       <title>Es入门-easy-es</title>
       <link>https://zpc2222.github.io/posts/tech/es%E5%85%A5%E9%97%A8-easy-es/</link>

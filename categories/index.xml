@@ -6,22 +6,22 @@
     <description>Recent content in Categories on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Dec 2022 15:09:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tech</title>
+      <link>https://zpc2222.github.io/categories/tech/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/categories/tech/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>life</title>
       <link>https://zpc2222.github.io/categories/life/</link>
       <pubDate>Fri, 09 Dec 2022 15:09:00 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/categories/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tech</title>
-      <link>https://zpc2222.github.io/categories/tech/</link>
-      <pubDate>Tue, 29 Nov 2022 00:00:00 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/categories/tech/</guid>
       <description></description>
     </item>
     

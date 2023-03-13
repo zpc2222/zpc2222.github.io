@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mybatis on 我的个人小站</title>
+    <link>https://zpc2222.github.io/tags/mybatis/</link>
+    <description>Recent content in Mybatis on 我的个人小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MybatisPlus常用</title>
+      <link>https://zpc2222.github.io/posts/tech/mybatisplus/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/mybatisplus/</guid>
+      <description>MybatisPlus常用一些语法及心得</description>
+    </item>
+    
+  </channel>
+</rss>

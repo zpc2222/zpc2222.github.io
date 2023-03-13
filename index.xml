@@ -6,7 +6,16 @@
     <description>Recent content on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Dec 2022 15:09:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MybatisPlus常用</title>
+      <link>https://zpc2222.github.io/posts/tech/mybatisplus/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/mybatisplus/</guid>
+      <description>MybatisPlus常用一些语法及心得</description>
+    </item>
+    
     <item>
       <title>2023年</title>
       <link>https://zpc2222.github.io/posts/life/2023/</link>
