@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on 我的个人小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git常用</title>
+      <link>https://zpc2222.github.io/posts/tech/git-common/</link>
+      <pubDate>Tue, 14 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/git-common/</guid>
+      <description>Git常用记录</description>
+    </item>
+    
     <item>
       <title>MybatisPlus常用</title>
       <link>https://zpc2222.github.io/posts/tech/mybatisplus/</link>
@@ -14,6 +23,15 @@
       
       <guid>https://zpc2222.github.io/posts/tech/mybatisplus/</guid>
       <description>MybatisPlus常用一些语法及心得</description>
+    </item>
+    
+    <item>
+      <title>MySQL使用</title>
+      <link>https://zpc2222.github.io/posts/tech/mysql/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/mysql/</guid>
+      <description>MySQL简单用法以及常见问题的解决</description>
     </item>
     
     <item>
@@ -130,7 +148,7 @@
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
       <guid>https://zpc2222.github.io/posts/tech/shell-script/</guid>
-      <description>linux环境运行的脚本</description>
+      <description>常用的一些shell语法</description>
     </item>
     
     <item>

@@ -16,5 +16,14 @@
       <description>MybatisPlus常用一些语法及心得</description>
     </item>
     
+    <item>
+      <title>MySQL使用</title>
+      <link>https://zpc2222.github.io/posts/tech/mysql/</link>
+      <pubDate>Mon, 13 Mar 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://zpc2222.github.io/posts/tech/mysql/</guid>
+      <description>MySQL简单用法以及常见问题的解决</description>
+    </item>
+    
   </channel>
 </rss>
