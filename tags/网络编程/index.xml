@@ -9,19 +9,19 @@
     <lastBuildDate>Mon, 05 Sep 2022 00:17:58 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netty实战</title>
-      <link>https://zpc2222.github.io/posts/tech/netty%E5%AE%9E%E6%88%98/</link>
+      <link>https://zpc2222.github.io/posts/tech/netty-in-action/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/netty%E5%AE%9E%E6%88%98/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/netty-in-action/</guid>
       <description>Java代码编写的一个客户端&#43;服务端的demo实例，入门级</description>
     </item>
     
     <item>
       <title>网络编程IO</title>
-      <link>https://zpc2222.github.io/posts/tech/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8Bio/</link>
+      <link>https://zpc2222.github.io/posts/tech/network-programming-io/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8Bio/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/network-programming-io/</guid>
       <description>网络编程IO简介</description>
     </item>
     

@@ -17,65 +17,65 @@
     </item>
     
     <item>
-      <title>springboot接入微信支付</title>
-      <link>https://zpc2222.github.io/posts/tech/java/java%E5%B8%B8%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <title>Java常用速记</title>
+      <link>https://zpc2222.github.io/posts/tech/java/java-common/</link>
       <pubDate>Wed, 02 Nov 2022 00:13:13 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java/java%E5%B8%B8%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/java-common/</guid>
       <description>Java常用的一些小技巧</description>
     </item>
     
     <item>
       <title>登录框架</title>
-      <link>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</link>
+      <link>https://zpc2222.github.io/posts/tech/java/spring-security-framework/</link>
       <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/spring-security-framework/</guid>
       <description>spring security框架 拦截器用法</description>
     </item>
     
     <item>
       <title>springboot接入微信支付</title>
-      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</link>
+      <link>https://zpc2222.github.io/posts/tech/java/wechatpay/</link>
       <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/wechatpay/</guid>
       <description>小程序使用微信支付（需要商家申请号商户号才能开发）</description>
     </item>
     
     <item>
       <title>微信小程序相关</title>
-      <link>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</link>
+      <link>https://zpc2222.github.io/posts/tech/java/wechat-mini-program/</link>
       <pubDate>Mon, 26 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9B%B8%E5%85%B3/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/wechat-mini-program/</guid>
       <description>微信小程序相关</description>
     </item>
     
     <item>
       <title>cron表达式</title>
-      <link>https://zpc2222.github.io/posts/tech/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <link>https://zpc2222.github.io/posts/tech/cron-expression/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/cron-expression/</guid>
       <description>cron表达式</description>
     </item>
     
     <item>
       <title>Java常用工具类</title>
-      <link>https://zpc2222.github.io/posts/tech/java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+      <link>https://zpc2222.github.io/posts/tech/java/java-common-utils/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/java-common-utils/</guid>
       <description>一些常用的工具类，自用</description>
     </item>
     
     <item>
       <title>JVM分析</title>
-      <link>https://zpc2222.github.io/posts/tech/jvm%E5%88%86%E6%9E%90/</link>
+      <link>https://zpc2222.github.io/posts/tech/jvm-analysis/</link>
       <pubDate>Mon, 05 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/jvm%E5%88%86%E6%9E%90/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/jvm-analysis/</guid>
       <description>JVM分析方法</description>
     </item>
     

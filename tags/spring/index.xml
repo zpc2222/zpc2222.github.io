@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 28 Sep 2022 00:17:58 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>登录框架</title>
-      <link>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</link>
+      <link>https://zpc2222.github.io/posts/tech/java/spring-security-framework/</link>
       <pubDate>Wed, 28 Sep 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/java/%E7%99%BB%E5%BD%95%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://zpc2222.github.io/posts/tech/java/spring-security-framework/</guid>
       <description>spring security框架 拦截器用法</description>
     </item>
     
