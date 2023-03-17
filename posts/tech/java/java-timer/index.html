@@ -1,0 +1,376 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>定时任务用法 | 我的个人小站</title><meta name=keywords content="java"><meta name=description content="JDK提供的Timer使用"><meta name=author content="
+作者:&nbsp;藏锋"><link rel=canonical href=https://zpc2222.github.io/posts/tech/java/java-timer/><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://zpc2222.github.io/img/Q.gif><link rel=icon type=image/png sizes=16x16 href=https://zpc2222.github.io/img/Q.gif><link rel=icon type=image/png sizes=32x32 href=https://zpc2222.github.io/img/Q.gif><link rel=apple-touch-icon href=https://zpc2222.github.io/img/Q.gif><link rel=mask-icon href=https://zpc2222.github.io/img/Q.gif><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><meta property="og:title" content="定时任务用法"><meta property="og:description" content="JDK提供的Timer使用"><meta property="og:type" content="article"><meta property="og:url" content="https://zpc2222.github.io/posts/tech/java/java-timer/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-03-17T00:13:13+08:00"><meta property="article:modified_time" content="2023-03-17T00:13:13+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="定时任务用法"><meta name=twitter:description content="JDK提供的Timer使用"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"📚文章","item":"https://zpc2222.github.io/posts/"},{"@type":"ListItem","position":3,"name":"👨🏻‍💻 技术","item":"https://zpc2222.github.io/posts/tech/"},{"@type":"ListItem","position":4,"name":"定时任务用法","item":"https://zpc2222.github.io/posts/tech/java/java-timer/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"定时任务用法","name":"定时任务用法","description":"JDK提供的Timer使用","keywords":["java"],"articleBody":"背景和使用 日常实现各种服务端系统时，我们一定会有一些定时任务的需求。比如会议提前半小时自动提醒，异步任务定时/周期执行等。那么如何去实现这样的一个定时任务系统呢？ Java JDK提供的Timer类就是一个很好的工具，通过简单的API调用，我们就可以实现定时任务。 java.util.Timer是如何实现这样的定时功能的。 1 2 3 4 5 6 7 8 9 10 11 12 Timer timer = new Timer(); TimerTask task = new TimerTask() { public void run() { System.out.println(\"executing now!\"); } }; // 延迟 1s 打印一次 timer.schedule(task, 1000) // 延迟 1s 固定时延每隔 1s 周期打印一次 timer.schedule(task, 1000, 1000); // 延迟 1s 固定速率每隔 1s 周期打印一次 timer.scheduleAtFixRate(task, 1000, 1000) 基本的使用方法： 1. 创建一个Timer对象 2. 创建一个TimerTask对象，在这里实现run方法 3. 将TimerTask对象作为参数，传入到Timer对象的scheule方法中，进行调度执行。 加入任务的API • 一次性任务的API // 指定时延后运行 // 默认fixed-delay模式，周期时间按上一次执行结束时间计算\n1 2 3 4 5 6 7 8 9 10 public void schedule(TimerTask task, long delay) { if (delay \u003c 0) throw new IllegalArgumentException(\"Negative delay.\"); sched(task, System.currentTimeMillis()+delay, 0); } // 指定时间点运行 public void schedule(TimerTask task, Date time) { sched(task, time.getTime(), 0); } 周期任务的APi // 指定时延后运行，之后以指定周期运行\n1 2 3 4 5 6 7 public void schedule(TimerTask task, long delay, long period) { if (delay \u003c 0) throw new IllegalArgumentException(\"Negative delay.\"); if (period \u003c= 0) throw new IllegalArgumentException(\"Non-positive period.\"); sched(task, System.currentTimeMillis()+delay, -period); } // 指定时间点运行，之后以指定周期运行 1 2 3 4 5 public void schedule(TimerTask task, Date firstTime, long period) { if (period \u003c= 0) throw new IllegalArgumentException(\"Non-positive period.\"); sched(task, firstTime.getTime(), -period); } // 指定时延后运行，之后以指定周期运行 // 默认fixedRate模式，周期时间按任务执行开始时间计算\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 public void scheduleAtFixedRate(TimerTask task, long delay, long period) { if (delay \u003c 0) throw new IllegalArgumentException(\"Negative delay.\"); if (period \u003c= 0) throw new IllegalArgumentException(\"Non-positive period.\"); sched(task, System.currentTimeMillis()+delay, period); } public void scheduleAtFixedRate(TimerTask task, Date firstTime, long period) { if (period \u003c= 0) throw new IllegalArgumentException(\"Non-positive period.\"); sched(task, firstTime.getTime(), period); } 可以看到API方法内部都是调用sched方法，其中time参数下一次任务执行时间点，是通过计算得到。period参数为0的话则表示为一次性任务。\n内部原理 先看一下Timer的组成部分： public class Timer {\n// 任务队列 private final TaskQueue queue = new TaskQueue(); // 工作线程，循环取任务 private final TimerThread thread = new TimerThread(queue); private final Object threadReaper = new Object() { protected void finalize() throws Throwable { synchronized(queue) { thread.newTasksMayBeScheduled = false; queue.notify(); // In case queue is empty. } } }; // Timer的序列号，命名工作线程（静态变量，在启动多个Timer的情况可以用于区分对应的工作线程） private final static AtomicInteger nextSerialNumber = new AtomicInteger(0); }\nTimer有3个重要的模块，分别是 TimerTask, TaskQueue, TimerThread • TimerTask，即待执行的任务 • TaskQueue，任务队列，TimerTask加入后会按执行时间自动排序 • TimerThread，工作线程，真正循环执行TimerTask的线程 那么，在加入任务之后，整个Timer是怎么样运行的呢？可以看下面的示意图：\n多个任务加入到TaskQueue中，会自动排序，队首任务一定是当前执行时间最早的任务。TimerThread会有一个一直执行的循环，从TaskQueue取队首任务，判断当前时间是否已经到了任务执行时间点，如果是则执行任务。\n工作线程 1 2 3 4 5 6 1. 创建任务，调用scheule方法 public void schedule(TimerTask task, Date firstTime, long period) { if (period \u003c= 0) throw new IllegalArgumentException(\"Non-positive period.\"); sched(task, firstTime.getTime(), -period); } 1. 内部调用sched方法 // sched方法的入参是task任务，执行的时间，以及执行周期 private void sched(TimerTask task, long time, long period) { if (time \u003c 0) throw new IllegalArgumentException(“Illegal execution time.”); // 防止溢出 if (Math.abs(period) \u003e (Long.MAX_VALUE » 1)) period »= 1;\n// 对queue加锁，避免并发入队 synchronized(queue) { if (!thread.newTasksMayBeScheduled) throw new IllegalStateException(\"Timer already cancelled.\"); // 对task加锁，避免并发修改 synchronized(task.lock) { if (task.state != TimerTask.VIRGIN) throw new IllegalStateException( \"Task already scheduled or cancelled\"); task.nextExecutionTime = time; task.period = period; task.state = TimerTask.SCHEDULED; } // 任务入队 queue.add(task); /* 如果任务是队列当前第一个任务，则唤醒工作线程 这里是因为工作线程处理完上一个任务之后，会 sleep 到下一个 task 的执行时间点。 如果有 nextExecutionTime 更早的 task 插队到前面，则需要马上唤醒工作线程进行检查 避免 task 延迟执行 */ if (queue.getMin() == task) queue.notify(); } }\n流程中加了一些锁，用来避免同时加入TimerTask的并发问题。可以看到sched方法的逻辑比较简单，task赋值之后入队，队列会自动按照nextExecutionTime排序（升序，排序的实现原理后面会提到）。 1. 工作线程的mainLoop public void run() { try { mainLoop(); } finally { synchronized(queue) { newTasksMayBeScheduled = false; queue.clear(); } } }\n/**\n工作线程主逻辑，循环执行 */ private void mainLoop() { while (true) { try { TimerTask task; boolean taskFired; // 标记任务是否应该执行 synchronized(queue) { // 如果队列为空，且newTasksMayBeScheduled为true，此时等待任务加入 while (queue.isEmpty() \u0026\u0026 newTasksMayBeScheduled) queue.wait();\n// 如果队列为空，且newTasksMayBeScheduled为false，说明此时线程应该退出 if (queue.isEmpty()) break; // 队列不为空，尝试从队列中取task（目标执行时间最早的task） long currentTime, executionTime; task = queue.getMin(); synchronized(task.lock) { // 校验task状态 if (task.state == TimerTask.CANCELLED) { queue.removeMin(); continue; } currentTime = System.currentTimeMillis(); executionTime = task.nextExecutionTime; // 当前时间 \u003e= 目标执行时间，说明任务可执行，设置taskFired = true if (taskFired = (executionTime\u003c=currentTime)) { if (task.period == 0) { // period == 0 说明是非周期任务，先从队列移除 queue.removeMin(); task.state = TimerTask.EXECUTED; } else { // 周期任务，会根据period重设执行时间，再加入到队列中 queue.rescheduleMin( task.period\u003c0 ? currentTime - task.period : executionTime + task.period); } } } if (!taskFired) // 任务为不需执行状态，则等待 queue.wait(executionTime - currentTime); } if (taskFired) // 任务需要执行，则调用task的run方法执行，这里执行的其实就是调用方创建task时候run方法的逻辑 task.run(); } catch(InterruptedException e) { } } }\n从 mainLoop的源码中可以看出，基本的流程如下所示 当发现是周期任务时，会计算下一次任务执行的时间，这个时候有两种计算方式，即前面API中的 • schedule：period为负值，下次执行时间 • scheduleAtFixedRate：period为正值 queue.rescheduleMin( task.period\u003c0 ? currentTime - task.period : executionTime + task.period);\n优先队列 当从队列中移除任务，或者是修改任务执行时间之后，队列会自动排序。始终保持执行时间最早的任务在队首。 那么这是如何实现的呢？ 看一下TaskQueue的源码就清楚了 class TaskQueue {\nprivate TimerTask[] queue = new TimerTask[128]; private int size = 0; int size() { return size; } void add(TimerTask task) { if (size + 1 == queue.length) queue = Arrays.copyOf(queue, 2*queue.length); queue[++size] = task; fixUp(size); } TimerTask getMin() { return queue[1]; } TimerTask get(int i) { return queue[i]; } void removeMin() { queue[1] = queue[size]; queue[size--] = null; // Drop extra reference to prevent memory leak fixDown(1); } void quickRemove(int i) { assert i \u003c= size; queue[i] = queue[size]; queue[size--] = null; // Drop extra ref to prevent memory leak } void rescheduleMin(long newTime) { queue[1].nextExecutionTime = newTime; fixDown(1); } boolean isEmpty() { return size==0; } void clear() { for (int i=1; i\u003c=size; i++) queue[i] = null; size = 0; } private void fixUp(int k) { while (k \u003e 1) { int j = k \u003e\u003e 1; if (queue[j].nextExecutionTime \u003c= queue[k].nextExecutionTime) break; TimerTask tmp = queue[j]; queue[j] = queue[k]; queue[k] = tmp; k = j; } } private void fixDown(int k) { int j; while ((j = k \u003c\u003c 1) \u003c= size \u0026\u0026 j \u003e 0) { if (j \u003c size \u0026\u0026 queue[j].nextExecutionTime \u003e queue[j+1].nextExecutionTime) j++; // j indexes smallest kid if (queue[k].nextExecutionTime \u003c= queue[j].nextExecutionTime) break; TimerTask tmp = queue[j]; queue[j] = queue[k]; queue[k] = tmp; k = j; } } void heapify() { for (int i = size/2; i \u003e= 1; i--) fixDown(i); } }\n可以看到其实TaskQueue内部就是基于数组实现了一个最小堆 (balanced binary heap), 堆中元素根据 执行时间nextExecutionTime排序，执行时间最早的任务始终会排在堆顶。这样工作线程每次检查的任务就是当前最早需要执行的任务。堆的初始大小为128，有简单的倍增扩容机制。 其他方法 TimerTask 任务有四种状态： • VIRGIN： 任务刚刚创建，还没有schedule • SCHEDULED：任务已经schedule，进入到队列中 • EXECUTED： 任务已执行/执行中 • CANCELLED：任务已取消 Timer 还提供了cancel和purge方法 • cancel，清除队列中所有任务，工作线程退出。 • purge，清除队列中所有状态置为取消的任务。 常见应用 Java的Timer广泛被用于实现异步任务系统，在一些开源项目中也很常见， 例如消息队列RocketMQ的 延时消息/消费重试 中的异步逻辑。 public void start() { if (started.compareAndSet(false, true)) { super.load(); // 新建了一个timer this.timer = new Timer(“ScheduleMessageTimerThread”, true); for (Map.Entry entry : this.delayLevelTable.entrySet()) { // … }\n// 调用了Timer的scheduleAtFixedRate方法 this.timer.scheduleAtFixedRate(new TimerTask() { @Override public void run() { try { if (started.get()) { ScheduleMessageService.this.persist(); } } catch (Throwable e) { log.error(\"scheduleAtFixedRate flush exception\", e); } } }, 10000, this.defaultMessageStore.getMessageStoreConfig().getFlushDelayOffsetInterval()); } }\n上面这段代码是RocketMQ的延时消息投递任务 ScheduleMessageService 的核心逻辑，就是使用了Timer实现的异步定时任务。\n总结 不管是实现简单的异步逻辑，还是构建复杂的任务系统，Java的Timer确实是一个方便实用，而且又稳定的工具类。从Timer的实现原理， 我们也可以窥见定时系统的一个基础实现：线程循环 + 优先队列。这对于我们自己去设计相关的系统，也会有一定的启发。 ","wordCount":"3055","inLanguage":"en","datePublished":"2023-03-17T00:13:13+08:00","dateModified":"2023-03-17T00:13:13+08:00","author":[{"@type":"Person","name":"藏锋"}],"mainEntityOfPage":{"@type":"WebPage","@id":"https://zpc2222.github.io/posts/tech/java/java-timer/"},"publisher":{"@type":"Organization","name":"我的个人小站","logo":{"@type":"ImageObject","url":"https://zpc2222.github.io/img/Q.gif"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><script async src=https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js></script><header class=header><nav class=nav><div class=logo><a href=https://zpc2222.github.io accesskey=h title="我的个人小站 (Alt + H)"><img src=https://zpc2222.github.io/img/Q.gif alt=logo aria-label=logo height=35>我的个人小站</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://zpc2222.github.io/search title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://zpc2222.github.io/ title="🏠 主页"><span>🏠 主页</span></a></li><li><a href=https://zpc2222.github.io/posts title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://zpc2222.github.io/tags title="🧩 标签"><span>🧩 标签</span></a></li><li><a href=https://zpc2222.github.io/archives/ title="⏱ 时间轴"><span>⏱ 时间轴</span></a></li><li><a href=https://zpc2222.github.io/music title="🎵 听听歌"><span>🎵 听听歌</span></a></li><li><a href=https://zpc2222.github.io/about title="🙋🏻‍♂️ 关于"><span>🙋🏻‍♂️ 关于</span></a></li><li><a href=https://zpc2222.github.io/links title="🤝 友链"><span>🤝 友链</span></a></li></ul></nav></header><main class="main page"><article class=post-single><div id=single-content><header class=post-header><div class=breadcrumbs><a href=https://zpc2222.github.io>主页</a>&nbsp;»&nbsp;<a href=https://zpc2222.github.io/posts/>📚文章</a>&nbsp;»&nbsp;<a href=https://zpc2222.github.io/posts/tech/>👨🏻‍💻 技术</a></div><h1 class=post-title>定时任务用法</h1><div class=post-description>JDK提供的Timer使用</div><div class=post-meta>创建:&nbsp;<span title='2023-03-17 00:13:13 +0800 +0800'>2023-03-17</span>&nbsp;|&nbsp;更新:&nbsp;2023-03-17&nbsp;|&nbsp;字数:&nbsp;3055字&nbsp;|&nbsp;时长:&nbsp;7分钟&nbsp;|&nbsp;
+作者:&nbsp;藏锋
+&nbsp;|&nbsp;标签: &nbsp;<ul class=post-tags-meta><a href=https://zpc2222.github.io/tags/java/>java</a>
+<a href=https://zpc2222.github.io/tags/map/>、map</a></ul><span id=busuanzi_container_page_pv>&nbsp;| 访问: <span id=busuanzi_value_page_pv></span></span></div></header><aside id=toc-container class="toc-container wide"><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>文章目录</span></summary><div class=inner><ul><li><a href=#%e8%83%8c%e6%99%af%e5%92%8c%e4%bd%bf%e7%94%a8 aria-label=背景和使用>背景和使用</a><ul><li><a href=#%e5%9f%ba%e6%9c%ac%e7%9a%84%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95 aria-label=基本的使用方法：>基本的使用方法：</a></li><li><a href=#%e5%8a%a0%e5%85%a5%e4%bb%bb%e5%8a%a1%e7%9a%84api aria-label=加入任务的API>加入任务的API</a></li><li><a href=#%e5%91%a8%e6%9c%9f%e4%bb%bb%e5%8a%a1%e7%9a%84api aria-label=周期任务的APi>周期任务的APi</a></li></ul></li><li><a href=#%e5%86%85%e9%83%a8%e5%8e%9f%e7%90%86 aria-label=内部原理>内部原理</a><ul><li><a href=#timer%e6%9c%893%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e6%a8%a1%e5%9d%97%e5%88%86%e5%88%ab%e6%98%af-timertask-taskqueue-timerthread aria-label="Timer有3个重要的模块，分别是 TimerTask, TaskQueue, TimerThread">Timer有3个重要的模块，分别是 TimerTask, TaskQueue, TimerThread</a></li><li><a href=#%e5%b7%a5%e4%bd%9c%e7%ba%bf%e7%a8%8b aria-label=工作线程>工作线程</a></li></ul></li><li><a href=#%e6%80%bb%e7%bb%93 aria-label=总结>总结</a></li></ul></div></details></div></aside><script>let activeElement,elements;window.addEventListener("DOMContentLoaded",function(){checkTocPosition(),elements=document.querySelectorAll("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]"),activeElement=elements[0];const t=encodeURI(activeElement.getAttribute("id")).toLowerCase();document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active")},!1),window.addEventListener("resize",function(){checkTocPosition()},!1),window.addEventListener("scroll",()=>{activeElement=Array.from(elements).find(e=>{if(getOffsetTop(e)-window.pageYOffset>0&&getOffsetTop(e)-window.pageYOffset<window.innerHeight/2)return e})||activeElement,elements.forEach(e=>{const t=encodeURI(e.getAttribute("id")).toLowerCase();e===activeElement?document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active"):document.querySelector(`.inner ul li a[href="#${t}"]`).classList.remove("active")})},!1);const main=parseInt(getComputedStyle(document.body).getPropertyValue("--article-width"),10),toc=parseInt(getComputedStyle(document.body).getPropertyValue("--toc-width"),10),gap=parseInt(getComputedStyle(document.body).getPropertyValue("--gap"),10);function checkTocPosition(){const e=document.body.scrollWidth;e-main-toc*2-gap*4>0?document.getElementById("toc-container").classList.add("wide"):document.getElementById("toc-container").classList.remove("wide")}function getOffsetTop(e){if(!e.getClientRects().length)return 0;let t=e.getBoundingClientRect(),n=e.ownerDocument.defaultView;return t.top+n.pageYOffset}</script><div class=post-content><h1 id=背景和使用>背景和使用<a hidden class=anchor aria-hidden=true href=#背景和使用>#</a></h1><p>    日常实现各种服务端系统时，我们一定会有一些定时任务的需求。比如会议提前半小时自动提醒，异步任务定时/周期执行等。那么如何去实现这样的一个定时任务系统呢？ Java JDK提供的Timer类就是一个很好的工具，通过简单的API调用，我们就可以实现定时任务。
+    java.util.Timer是如何实现这样的定时功能的。
+  </p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>	Timer timer = new Timer(); 
+</span></span><span style=display:flex><span>TimerTask task = new TimerTask() { 
+</span></span><span style=display:flex><span>    public void run() { 
+</span></span><span style=display:flex><span>        System.out.println(&#34;executing now!&#34;); 
+</span></span><span style=display:flex><span>    } 
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>// 延迟 1s 打印一次 
+</span></span><span style=display:flex><span>timer.schedule(task, 1000) 
+</span></span><span style=display:flex><span>// 延迟 1s 固定时延每隔 1s 周期打印一次
+</span></span><span style=display:flex><span>timer.schedule(task, 1000, 1000); 
+</span></span><span style=display:flex><span>// 延迟 1s 固定速率每隔 1s 周期打印一次
+</span></span><span style=display:flex><span>timer.scheduleAtFixRate(task, 1000, 1000)
+</span></span></code></pre></td></tr></table></div></div><h2 id=基本的使用方法>基本的使用方法：<a hidden class=anchor aria-hidden=true href=#基本的使用方法>#</a></h2><pre><code>1. 创建一个Timer对象
+2. 创建一个TimerTask对象，在这里实现run方法
+3. 将TimerTask对象作为参数，传入到Timer对象的scheule方法中，进行调度执行。
+</code></pre><h2 id=加入任务的api>加入任务的API<a hidden class=anchor aria-hidden=true href=#加入任务的api>#</a></h2><pre><code>• 一次性任务的API
+</code></pre><p>// 指定时延后运行
+// 默认fixed-delay模式，周期时间按上一次执行结束时间计算</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>   public void schedule(TimerTask task, long delay) {
+</span></span><span style=display:flex><span>     if (delay &lt; 0)
+</span></span><span style=display:flex><span>         throw new IllegalArgumentException(&#34;Negative delay.&#34;);
+</span></span><span style=display:flex><span>     sched(task, System.currentTimeMillis()+delay, 0);
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> // 指定时间点运行
+</span></span><span style=display:flex><span> public void schedule(TimerTask task, Date time) {
+</span></span><span style=display:flex><span>     sched(task, time.getTime(), 0);
+</span></span><span style=display:flex><span> }
+</span></span></code></pre></td></tr></table></div></div><h2 id=周期任务的api>周期任务的APi<a hidden class=anchor aria-hidden=true href=#周期任务的api>#</a></h2><p>// 指定时延后运行，之后以指定周期运行</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>public void schedule(TimerTask task, long delay, long period) {
+</span></span><span style=display:flex><span>     if (delay &lt; 0)
+</span></span><span style=display:flex><span>         throw new IllegalArgumentException(&#34;Negative delay.&#34;);
+</span></span><span style=display:flex><span>     if (period &lt;= 0)
+</span></span><span style=display:flex><span>         throw new IllegalArgumentException(&#34;Non-positive period.&#34;);
+</span></span><span style=display:flex><span>     sched(task, System.currentTimeMillis()+delay, -period);
+</span></span><span style=display:flex><span> }
+</span></span></code></pre></td></tr></table></div></div><pre><code>// 指定时间点运行，之后以指定周期运行
+</code></pre><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>    public void schedule(TimerTask task, Date firstTime, long period) {
+</span></span><span style=display:flex><span>        if (period &lt;= 0)
+</span></span><span style=display:flex><span>            throw new IllegalArgumentException(&#34;Non-positive period.&#34;);
+</span></span><span style=display:flex><span>        sched(task, firstTime.getTime(), -period);
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></td></tr></table></div></div><p>// 指定时延后运行，之后以指定周期运行
+// 默认fixedRate模式，周期时间按任务执行开始时间计算</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>   public void scheduleAtFixedRate(TimerTask task, long delay, long period) {
+</span></span><span style=display:flex><span>       if (delay &lt; 0)
+</span></span><span style=display:flex><span>           throw new IllegalArgumentException(&#34;Negative delay.&#34;);
+</span></span><span style=display:flex><span>       if (period &lt;= 0)
+</span></span><span style=display:flex><span>           throw new IllegalArgumentException(&#34;Non-positive period.&#34;);
+</span></span><span style=display:flex><span>       sched(task, System.currentTimeMillis()+delay, period);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   public void scheduleAtFixedRate(TimerTask task, Date firstTime,
+</span></span><span style=display:flex><span>                                   long period) {
+</span></span><span style=display:flex><span>       if (period &lt;= 0)
+</span></span><span style=display:flex><span>           throw new IllegalArgumentException(&#34;Non-positive period.&#34;);
+</span></span><span style=display:flex><span>       sched(task, firstTime.getTime(), period);
+</span></span><span style=display:flex><span>   }
+</span></span></code></pre></td></tr></table></div></div><p>可以看到API方法内部都是调用sched方法，其中time参数下一次任务执行时间点，是通过计算得到。period参数为0的话则表示为一次性任务。</p><h1 id=内部原理>内部原理<a hidden class=anchor aria-hidden=true href=#内部原理>#</a></h1><p>先看一下Timer的组成部分：
+public class Timer {</p><pre><code>// 任务队列
+private final TaskQueue queue = new TaskQueue();
+
+// 工作线程，循环取任务
+private final TimerThread thread = new TimerThread(queue);
+
+private final Object threadReaper = new Object() {
+    protected void finalize() throws Throwable {
+        synchronized(queue) {
+            thread.newTasksMayBeScheduled = false;
+            queue.notify(); // In case queue is empty.
+        }
+    }
+};
+
+// Timer的序列号，命名工作线程（静态变量，在启动多个Timer的情况可以用于区分对应的工作线程）
+private final static AtomicInteger nextSerialNumber = new AtomicInteger(0);  
+</code></pre><p>}</p><h2 id=timer有3个重要的模块分别是-timertask-taskqueue-timerthread>Timer有3个重要的模块，分别是 TimerTask, TaskQueue, TimerThread<a hidden class=anchor aria-hidden=true href=#timer有3个重要的模块分别是-timertask-taskqueue-timerthread>#</a></h2><pre><code>• TimerTask，即待执行的任务
+• TaskQueue，任务队列，TimerTask加入后会按执行时间自动排序
+• TimerThread，工作线程，真正循环执行TimerTask的线程
+</code></pre><p>那么，在加入任务之后，整个Timer是怎么样运行的呢？可以看下面的示意图：</p><p>多个任务加入到TaskQueue中，会自动排序，队首任务一定是当前执行时间最早的任务。TimerThread会有一个一直执行的循环，从TaskQueue取队首任务，判断当前时间是否已经到了任务执行时间点，如果是则执行任务。</p><h2 id=工作线程>工作线程<a hidden class=anchor aria-hidden=true href=#工作线程>#</a></h2><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>1. 创建任务，调用scheule方法
+</span></span><span style=display:flex><span>public void schedule(TimerTask task, Date firstTime, long period) { 
+</span></span><span style=display:flex><span>    if (period &lt;= 0) 
+</span></span><span style=display:flex><span>        throw new IllegalArgumentException(&#34;Non-positive period.&#34;); 
+</span></span><span style=display:flex><span>    sched(task, firstTime.getTime(), -period); 
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><pre><code>1. 内部调用sched方法
+</code></pre><p>// sched方法的入参是task任务，执行的时间，以及执行周期
+private void sched(TimerTask task, long time, long period) {
+if (time &lt; 0)
+throw new IllegalArgumentException(&ldquo;Illegal execution time.&rdquo;);
+// 防止溢出
+if (Math.abs(period) > (Long.MAX_VALUE &#187; 1))
+period &#187;= 1;</p><pre><code>// 对queue加锁，避免并发入队
+synchronized(queue) {
+    if (!thread.newTasksMayBeScheduled)
+        throw new IllegalStateException(&quot;Timer already cancelled.&quot;);
+    
+    // 对task加锁，避免并发修改
+    synchronized(task.lock) {
+        if (task.state != TimerTask.VIRGIN)
+            throw new IllegalStateException(
+                &quot;Task already scheduled or cancelled&quot;);
+        task.nextExecutionTime = time;
+        task.period = period;
+        task.state = TimerTask.SCHEDULED;
+    }
+    // 任务入队
+    queue.add(task);
+    /* 如果任务是队列当前第一个任务，则唤醒工作线程
+       这里是因为工作线程处理完上一个任务之后，会 sleep 到下一个 task 的执行时间点。
+       如果有 nextExecutionTime 更早的 task 插队到前面，则需要马上唤醒工作线程进行检查
+       避免 task 延迟执行
+    */
+    if (queue.getMin() == task)
+        queue.notify();
+}
+</code></pre><p>}</p><p>流程中加了一些锁，用来避免同时加入TimerTask的并发问题。可以看到sched方法的逻辑比较简单，task赋值之后入队，队列会自动按照nextExecutionTime排序（升序，排序的实现原理后面会提到）。
+1. 工作线程的mainLoop
+public void run() {
+try {
+mainLoop();
+} finally {
+synchronized(queue) {
+newTasksMayBeScheduled = false;
+queue.clear();
+}
+}
+}</p><p>/**</p><ul><li><p>工作线程主逻辑，循环执行
+*/
+private void mainLoop() {
+while (true) {
+try {
+TimerTask task;
+boolean taskFired; // 标记任务是否应该执行
+synchronized(queue) {
+// 如果队列为空，且newTasksMayBeScheduled为true，此时等待任务加入
+while (queue.isEmpty() && newTasksMayBeScheduled)
+queue.wait();</p><pre><code>         // 如果队列为空，且newTasksMayBeScheduled为false，说明此时线程应该退出
+         if (queue.isEmpty())
+             break;
+
+         // 队列不为空，尝试从队列中取task（目标执行时间最早的task）
+         long currentTime, executionTime;
+         task = queue.getMin();
+         synchronized(task.lock) {
+             // 校验task状态
+             if (task.state == TimerTask.CANCELLED) {
+                 queue.removeMin();
+                 continue;
+             }
+             currentTime = System.currentTimeMillis();
+             executionTime = task.nextExecutionTime;
+
+             // 当前时间 &gt;= 目标执行时间，说明任务可执行，设置taskFired = true
+             if (taskFired = (executionTime&lt;=currentTime)) {
+                 if (task.period == 0) { // period == 0 说明是非周期任务，先从队列移除
+                     queue.removeMin();
+                     task.state = TimerTask.EXECUTED;
+                 } else { // 周期任务，会根据period重设执行时间，再加入到队列中
+                     queue.rescheduleMin(
+                       task.period&lt;0 ? currentTime   - task.period
+                                     : executionTime + task.period);
+                 }
+             }
+         }
+         if (!taskFired) // 任务为不需执行状态，则等待
+             queue.wait(executionTime - currentTime);
+     }
+     if (taskFired)  // 任务需要执行，则调用task的run方法执行，这里执行的其实就是调用方创建task时候run方法的逻辑
+         task.run();
+ } catch(InterruptedException e) {
+ }
+</code></pre><p>}
+}</p></li></ul><p>从 mainLoop的源码中可以看出，基本的流程如下所示
+当发现是周期任务时，会计算下一次任务执行的时间，这个时候有两种计算方式，即前面API中的
+• schedule：period为负值，下次执行时间
+• scheduleAtFixedRate：period为正值
+queue.rescheduleMin( task.period&lt;0 ? currentTime - task.period : executionTime + task.period);</p><p>优先队列
+当从队列中移除任务，或者是修改任务执行时间之后，队列会自动排序。始终保持执行时间最早的任务在队首。 那么这是如何实现的呢？
+看一下TaskQueue的源码就清楚了
+class TaskQueue {</p><pre><code>private TimerTask[] queue = new TimerTask[128];
+
+private int size = 0;
+
+int size() {
+    return size;
+}
+
+void add(TimerTask task) {
+    if (size + 1 == queue.length)
+        queue = Arrays.copyOf(queue, 2*queue.length);
+
+    queue[++size] = task;
+    fixUp(size);
+}
+
+TimerTask getMin() {
+    return queue[1];
+}
+
+TimerTask get(int i) {
+    return queue[i];
+}
+
+void removeMin() {
+    queue[1] = queue[size];
+    queue[size--] = null;  // Drop extra reference to prevent memory leak
+    fixDown(1);
+}
+
+void quickRemove(int i) {
+    assert i &lt;= size;
+
+    queue[i] = queue[size];
+    queue[size--] = null;  // Drop extra ref to prevent memory leak
+}
+
+void rescheduleMin(long newTime) {
+    queue[1].nextExecutionTime = newTime;
+    fixDown(1);
+}
+
+boolean isEmpty() {
+    return size==0;
+}
+
+void clear() {
+    for (int i=1; i&lt;=size; i++)
+        queue[i] = null;
+
+    size = 0;
+}
+
+private void fixUp(int k) {
+    while (k &gt; 1) {
+        int j = k &gt;&gt; 1;
+        if (queue[j].nextExecutionTime &lt;= queue[k].nextExecutionTime)
+            break;
+        TimerTask tmp = queue[j];  queue[j] = queue[k]; queue[k] = tmp;
+        k = j;
+    }
+}
+
+private void fixDown(int k) {
+    int j;
+    while ((j = k &lt;&lt; 1) &lt;= size &amp;&amp; j &gt; 0) {
+        if (j &lt; size &amp;&amp;
+            queue[j].nextExecutionTime &gt; queue[j+1].nextExecutionTime)
+            j++; // j indexes smallest kid
+        if (queue[k].nextExecutionTime &lt;= queue[j].nextExecutionTime)
+            break;
+        TimerTask tmp = queue[j];  queue[j] = queue[k]; queue[k] = tmp;
+        k = j;
+    }
+}
+
+void heapify() {
+    for (int i = size/2; i &gt;= 1; i--)
+        fixDown(i);
+}
+</code></pre><p>}</p><p>可以看到其实TaskQueue内部就是基于数组实现了一个最小堆 (balanced binary heap), 堆中元素根据 执行时间nextExecutionTime排序，执行时间最早的任务始终会排在堆顶。这样工作线程每次检查的任务就是当前最早需要执行的任务。堆的初始大小为128，有简单的倍增扩容机制。
+其他方法
+TimerTask 任务有四种状态：
+• VIRGIN： 任务刚刚创建，还没有schedule
+• SCHEDULED：任务已经schedule，进入到队列中
+• EXECUTED： 任务已执行/执行中
+• CANCELLED：任务已取消
+Timer 还提供了cancel和purge方法
+• cancel，清除队列中所有任务，工作线程退出。
+• purge，清除队列中所有状态置为取消的任务。
+常见应用
+Java的Timer广泛被用于实现异步任务系统，在一些开源项目中也很常见， 例如消息队列RocketMQ的 延时消息/消费重试 中的异步逻辑。
+public void start() {
+if (started.compareAndSet(false, true)) {
+super.load();
+// 新建了一个timer
+this.timer = new Timer(&ldquo;ScheduleMessageTimerThread&rdquo;, true);
+for (Map.Entry&lt;Integer, Long> entry : this.delayLevelTable.entrySet()) {
+// &mldr;
+}</p><pre><code>    // 调用了Timer的scheduleAtFixedRate方法
+    this.timer.scheduleAtFixedRate(new TimerTask() {
+
+        @Override
+        public void run() {
+            try {
+                if (started.get()) {
+                    ScheduleMessageService.this.persist();
+                }
+            } catch (Throwable e) {
+                log.error(&quot;scheduleAtFixedRate flush exception&quot;, e);
+            }
+        }
+    }, 10000, this.defaultMessageStore.getMessageStoreConfig().getFlushDelayOffsetInterval());
+}
+</code></pre><p>}</p><p>上面这段代码是RocketMQ的延时消息投递任务 ScheduleMessageService 的核心逻辑，就是使用了Timer实现的异步定时任务。</p><h1 id=总结>总结<a hidden class=anchor aria-hidden=true href=#总结>#</a></h1><pre><code>不管是实现简单的异步逻辑，还是构建复杂的任务系统，Java的Timer确实是一个方便实用，而且又稳定的工具类。从Timer的实现原理，
+我们也可以窥见定时系统的一个基础实现：线程循环 + 优先队列。这对于我们自己去设计相关的系统，也会有一定的启发。
+</code></pre></div><div style="padding:10px 0;margin:20px auto;width:100%;font-size:16px;text-align:center">☕ 请我喝杯咖啡吧 ヾ(^▽^*)))
+<button id=rewardButton disable=enable onclick='var qr=document.getElementById("QR");qr.style.display==="none"?qr.style.display="block":qr.style.display="none"'>
+<span>打赏</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><a class=fancybox rel=group><img id=wechat_qr src=https://zpc2222.github.io/img/wechat-pay.jpg alt="WeChat Pay" style=width:280px;height:280px></a><p>微信</p></div><div id=alipay style=display:inline-block><a class=fancybox rel=group><img id=alipay_qr src=https://zpc2222.github.io/img/ali-pay.jpg alt=Alipay style=width:280px;height:280px></a><p>支付宝</p></div></div></div><footer class=post-footer><nav class=paginav><a class=next href=https://zpc2222.github.io/posts/tech/git-common/><span class=title>下一页 »</span><br><span>Git常用</span></a></nav></footer></div><div><div class=pagination__title><span class=pagination__title-h style=font-size:20px>💬评论</span><hr></div><div id=tcomment></div><script src=https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js></script><script>twikoo.init({envId:"https://vercel-zpc2222.vercel.app",el:"#tcomment",lang:"zh-CN",region:null,path:window.TWIKOO_MAGIC_PATH||window.location.pathname})</script></div></article></main><script async src=https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js></script>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><footer class=footer><span>Copyright
+&copy;
+2022-2023
+<a href=https://zpc2222.github.io style=color:#939393>我的个人小站</a>
+All Rights Reserved</span>
+<span id=busuanzi_container><link rel=stylesheet href=//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css>总访客数: <i class="fa fa-user"></i><span id=busuanzi_value_site_uv></span>
+总访问量: <i class="fa fa-eye"></i><span id=busuanzi_value_site_pv></span></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><span class=topInner><svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg><span id=read_progress></span></span></a>
+<script>document.addEventListener("scroll",function(){const t=document.getElementById("read_progress"),n=document.documentElement.scrollHeight,s=document.documentElement.clientHeight,o=document.documentElement.scrollTop||document.body.scrollTop;t.innerText=((o/(n-s)).toFixed(2)*100).toFixed(0)})</script><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>400||document.documentElement.scrollTop>400?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.body.addEventListener("copy",function(e){if(window.getSelection().toString()&&window.getSelection().toString().length>50){let t=e.clipboardData||window.clipboardData;if(t){e.preventDefault();let n=window.getSelection().toString()+`
+
+————————————————
+版权声明：本文为「我的个人小站」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：`+location.href,s=window.getSelection().toString()+`
+
+————————————————
+版权声明：本文为「我的个人小站」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：`+location.href;t.setData("text/html",n),t.setData("text/plain",s)}}})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerText="📄复制";function s(){t.innerText="👌🏻已复制!",setTimeout(()=>{t.innerText="📄复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){let t=e.textContent+`
+————————————————
+版权声明：本文为「我的个人小站」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：`+location.href;navigator.clipboard.writeText(t),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
