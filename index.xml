@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>Git常用</title>
-      <link>https://zpc2222.github.io/posts/tech/git-common/</link>
+      <title>Git使用</title>
+      <link>https://zpc2222.github.io/posts/tools/git-common/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/git-common/</guid>
-      <description>Git常用记录</description>
+      <guid>https://zpc2222.github.io/posts/tools/git-common/</guid>
+      <description>Git日常使用及问题记录</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
     </item>
     
     <item>
-      <title>音乐</title>
+      <title>🎧音乐</title>
       <link>https://zpc2222.github.io/music/</link>
       <pubDate>Sat, 01 Oct 2022 18:44:28 +0800</pubDate>
       
@@ -167,15 +167,6 @@
       
       <guid>https://zpc2222.github.io/posts/tech/java/spring-security-framework/</guid>
       <description>spring security框架 拦截器用法</description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://zpc2222.github.io/posts/tools/git/</link>
-      <pubDate>Wed, 28 Sep 2022 00:14:01 +0800</pubDate>
-      
-      <guid>https://zpc2222.github.io/posts/tools/git/</guid>
-      <description>Git常用的一些语句，语法及问题</description>
     </item>
     
     <item>

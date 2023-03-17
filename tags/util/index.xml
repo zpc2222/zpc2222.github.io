@@ -8,12 +8,12 @@
     <language>zh-cn</language>
     <lastBuildDate>Tue, 14 Mar 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://zpc2222.github.io/tags/util/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Git常用</title>
-      <link>https://zpc2222.github.io/posts/tech/git-common/</link>
+      <title>Git使用</title>
+      <link>https://zpc2222.github.io/posts/tools/git-common/</link>
       <pubDate>Tue, 14 Mar 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://zpc2222.github.io/posts/tech/git-common/</guid>
-      <description>Git常用记录</description>
+      <guid>https://zpc2222.github.io/posts/tools/git-common/</guid>
+      <description>Git日常使用及问题记录</description>
     </item>
     
   </channel>
